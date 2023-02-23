@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.emotion_analysis.mapper.RoleMapper">
+    <select id="findAllRole" resultType="Role">
+        select  *from Role
+    </select>
+    <delete id="deleteRole">
+        delete  from role as r where role_id=#{roleId}
+    </delete>
+    <update id="updateRole" parameterType="Role">
+        update role set role_name=#{roleName},role_key=#{roleKey}
+    </update>
+    <insert id="addRole" parameterType="Role">
+        insert into role(role_name,role_key) values (#{roleName},#{roleKey})
+    </insert>
+</mapper>

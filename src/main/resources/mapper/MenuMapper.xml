@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.emotion_analysis.mapper.MenuMapper">
+    <select id="findAllMenu" resultType="Menu">
+        select *from menu
+    </select>
+    <update id="updateMenu" parameterType="Menu">
+        update menu set menu_name=#{menuName},menu_key=#{menuKey}
+    </update>
+    <delete id="deleteMenu">
+        delete  from menu as r where menu_id=#{menuId}
+    </delete>
+    <insert id="addMenu" parameterType="Menu">
+        insert into Menu(menu_name,menu_key) values (#{MenuName},#{MenuKey})
+    </insert>
+</mapper>

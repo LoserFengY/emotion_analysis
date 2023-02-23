@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neusoft.emotion_analysis.mapper.QuestionBank">
+<select id="findAllQuestionBank" resultType="QuestionBank">
+    select *from question_bank 
+</select>
+ <delete id="deleteQuestion">
+     delete  from question_bank where question_id=#{questionId}
+ </delete>
+    <insert id="addQuestion" parameterType="QuestionBank">
+        insert  into question_bank(question,select_A,select _B,select_C,select_D) values (#{question},#{selectA},#{selectB},#{selectC},#{selectD})
+    </insert>
+    <update id="updateQuestionBank" parameterType="QuestionBank">
+
+    </update>
+</mapper>
